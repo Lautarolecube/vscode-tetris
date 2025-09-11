@@ -1,10 +1,9 @@
-package main;
 
 public class FormaDogL {
 
 private int[][] formaDogL;
 
-    // Constructor: inicializa la forma
+    //inicializa la forma
     public FormaDogL() {
         formaDogL = new int[3][3];
         formaDogL[0][1] = 1;
@@ -13,7 +12,7 @@ private int[][] formaDogL;
         formaDogL[1][1] = 1;
     }
 
-    // Getter: devuelve la matriz
+    //devuelve la matriz
     public int[][] getForma() {
         return formaDogL;
     }
