@@ -1,7 +1,11 @@
 
-public final class Rotarpieza {
-    private final boolean[][][] rotations; // [4][filas][cols]
-    private int orientation = 0;           // 0..3
+
+public abstract class Rotarpieza {
+
+
+
+    private final boolean[][][] rotations;
+    private int orientation = 0;          
 
     public Rotarpieza(boolean[][] r0, boolean[][] r90, boolean[][] r180, boolean[][] r270) {
         this.rotations = new boolean[][][] {
