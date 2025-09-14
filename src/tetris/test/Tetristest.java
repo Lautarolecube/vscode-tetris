@@ -11,9 +11,9 @@ import tetris.PieceDogR;
 
 public class Tetristest {
 
-    // =============================
-    // PIEZA L Izquierda (LL)
-    // =============================
+ 
+    // PIEZA L Izquierda 
+   
     @Test
     public void testCreacionPieceLL() {
         PieceLL pieza = new PieceLL();
@@ -37,9 +37,8 @@ public class Tetristest {
         assertArrayEquals(esperado, pieza.getShape());
     }
 
-    // =============================
-    // PIEZA L Derecha (LR)
-    // =============================
+    // PIEZA L Derecha 
+
     @Test
     public void testCreacionPieceLR() {
         PieceLR pieza = new PieceLR();
@@ -66,9 +65,9 @@ public void testRotacionPieceLR() {
 }
 
 
-    // =============================
-    // PIEZA I (Stick)
-    // =============================
+
+    // PIEZA Stick
+   
     @Test
     public void testCreacionPieceStick() {
         PieceStick pieza = new PieceStick();
@@ -91,9 +90,8 @@ public void testRotacionPieceLR() {
         assertArrayEquals(esperado, pieza.getShape());
     }
 
-    // =============================
     // PIEZA T
-    // =============================
+
     @Test
     public void testCreacionPieceT() {
         PieceT pieza = new PieceT();
@@ -117,9 +115,9 @@ public void testRotacionPieceLR() {
         assertArrayEquals(esperado, pieza.getShape());
     }
 
-    // =============================
-    // PIEZA O (Square)
-    // =============================
+   
+    // PIEZA Square
+ 
     @Test
     public void testCreacionPieceSquare() {
         PieceSquare pieza = new PieceSquare();
@@ -141,9 +139,9 @@ public void testRotacionPieceLR() {
         assertArrayEquals(esperado, pieza.getShape(), "El cuadrado no cambia al rotar");
     }
 
-    // =============================
-    // PIEZA S (DogL)
-    // =============================
+
+    // PIEZA DogL
+  
     @Test
     public void testCreacionPieceDogL() {
         PieceDogL pieza = new PieceDogL();
@@ -167,9 +165,9 @@ public void testRotacionPieceLR() {
         assertArrayEquals(esperado, pieza.getShape());
     }
 
-    // =============================
-    // PIEZA Z (DogR)
-    // =============================
+    
+    // PIEZA DogR
+    
     @Test
     public void testCreacionPieceDogR() {
         PieceDogR pieza = new PieceDogR();
