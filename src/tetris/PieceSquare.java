@@ -1,3 +1,4 @@
+package tetris;
 public class PieceSquare extends Rotarpieza {
     public PieceSquare() {
         super(

@@ -1,3 +1,4 @@
+package tetris;
 public class Board {
     private final int rows = 20;
     private final int cols = 10;

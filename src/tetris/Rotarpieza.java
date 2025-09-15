@@ -1,5 +1,4 @@
-
-
+package tetris;
 public abstract class Rotarpieza {
 
 
