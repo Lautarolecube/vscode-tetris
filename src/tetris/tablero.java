@@ -1,4 +1,4 @@
-
+package tetris;
 public class tablero {
     private final int[][] matrizTablero;
 

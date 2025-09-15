@@ -1,14 +1,15 @@
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
-
-import tetris.PieceLL;
-import tetris.PieceLR;
-import tetris.PieceStick;
-import tetris.PieceT;
-import tetris.PieceSquare;
+package tetris.test;
 import tetris.PieceDogL;
 import tetris.PieceDogR;
+import tetris.PieceLL;
+import tetris.PieceLR;
+import tetris.PieceSquare;
+import tetris.PieceStick;
+import tetris.PieceT;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import org.junit.jupiter.api.Test;
 public class Tetristest {
 
  
@@ -50,8 +51,8 @@ public class Tetristest {
         assertArrayEquals(esperado, pieza.getShape());
     }
 
-  @Test
-public void testRotacionPieceLR() {
+    @Test
+    public void testRotacionPieceLR() {
     PieceLR pieza = new PieceLR();
     pieza.rotateRight();
 
