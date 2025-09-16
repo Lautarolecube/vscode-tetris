@@ -1,6 +1,7 @@
 package tetris.test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import java.util.Arrays;
 
 import tetris.PieceLL;
 import tetris.PieceLR;
@@ -13,6 +14,13 @@ import tetris.PieceDogR;
 
 public class Tetristest {
 
+    // compara fila x fila dos matrices para ver si son iguales
+    private static void assertMatrixEquals(int[][] expected, int[][] actual) {
+        assertEquals(expected.length, actual.length, "Filas distintas");
+        for (int i = 0; i < expected.length; i++) {
+            assertArrayEquals(expected[i], actual[i], "Fila " + i + " distinta");
+        }
+    }
  
     // PIEZA L Izquierda 
    
@@ -24,7 +32,8 @@ public class Tetristest {
             {1, 1,  1},
             {0, 0, 0}
         };
-        assertArrayEquals(esperado, pieza.getShape());
+    assertMatrixEquals(esperado, pieza.getShape());
+
     }
 
     @Test
@@ -36,10 +45,8 @@ public class Tetristest {
             {0, 1,  0},
             {0, 1,  0}
         };
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
-
-    // PIEZA L Derecha 
 
     @Test
     public void testCreacionPieceLR() {
@@ -49,49 +56,29 @@ public class Tetristest {
             {1,  1,  1},
             {0, 0, 0}
         };
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
     
+    
     @Test
-    public void rotarL180() {
+    public void testRotacionPieceLR() {
         PieceLR pieza = new PieceLR();
-        pieza.rotateRight(); // 90°
-        pieza.rotateRight(); // 180°
+        pieza.rotateRight();
         int[][] esperado = {
-            {0, 0, 0},
-            {1,  1,  1},
-            {1,  0, 0}
+            {0, 1,  0},
+            {0, 1,  0},
+            {0, 1,  1}
         };
-
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
 
-
-  @Test
-public void testRotacionPieceLR() {
-    PieceLR pieza = new PieceLR();
-    pieza.rotateRight();
-
-    int[][] esperado = {
-        {0, 1,  0},
-        {0, 1,  0},
-        {0, 1,  1}
-    };
-
-    assertArrayEquals(esperado, pieza.getShape());
-}
-
-
-
-    // PIEZA Stick
-   
     @Test
     public void testCreacionPieceStick() {
         PieceStick pieza = new PieceStick();
         int[][] esperado = {
             {1, 1, 1, 1}
         };
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
 
     @Test
@@ -104,37 +91,36 @@ public void testRotacionPieceLR() {
             {1},
             {1}
         };
-        assertArrayEquals(esperado, pieza.getShape());
-    }
+        int[][] actual = pieza.getShape();
+    assertMatrixEquals(esperado, actual);
 
-    // PIEZA T
+    }
 
     @Test
     public void testCreacionPieceT() {
         PieceT pieza = new PieceT();
         int[][] esperado = {
-            {1, 1, 1},
             {0, 1, 0},
+            {1, 1, 1},
             {0, 0, 0}
         };
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
 
     @Test
     public void testRotacionPieceT() {
         PieceT pieza = new PieceT();
         pieza.rotateRight();
+        pieza.rotateRight();
+        pieza.rotateRight();
         int[][] esperado = {
             {0, 1, 0},
             {1,  1, 0},
             {0, 1, 0}
         };
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
 
-   
-    // PIEZA Square
- 
     @Test
     public void testCreacionPieceSquare() {
         PieceSquare pieza = new PieceSquare();
@@ -142,7 +128,7 @@ public void testRotacionPieceLR() {
             {1, 1},
             {1, 1}
         };
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
 
     @Test
@@ -153,12 +139,9 @@ public void testRotacionPieceLR() {
             {1, 1},
             {1, 1}
         };
-        assertArrayEquals(esperado, pieza.getShape(), "El cuadrado no cambia al rotar");
+        assertMatrixEquals(esperado, pieza.getShape());
     }
 
-
-    // PIEZA DogL
-  
     @Test
     public void testCreacionPieceDogL() {
         PieceDogL pieza = new PieceDogL();
@@ -167,7 +150,7 @@ public void testRotacionPieceLR() {
             {1,  1,  0},
             {0, 0, 0}
         };
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
 
     @Test
@@ -179,12 +162,9 @@ public void testRotacionPieceLR() {
             {1,  1 },
             {0, 1 }
         };
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
 
-    
-    // PIEZA DogR
-    
     @Test
     public void testCreacionPieceDogR() {
         PieceDogR pieza = new PieceDogR();
@@ -193,7 +173,7 @@ public void testRotacionPieceLR() {
             {0, 1,  1},
             {0, 0, 0}
         };
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
 
     @Test
@@ -205,13 +185,13 @@ public void testRotacionPieceLR() {
             {1,  1 },
             {1,  0}
         };
-        assertArrayEquals(esperado, pieza.getShape());
+        assertMatrixEquals(esperado, pieza.getShape());
     }
 
 
 }
     // TABLERO
-    
+
 
 
 

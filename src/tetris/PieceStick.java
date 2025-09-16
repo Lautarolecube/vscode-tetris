@@ -2,11 +2,12 @@ package tetris;
 public class PieceStick extends Rotarpieza {
     public PieceStick() {
         super(
-            new int[][] { {1, 1}, {1, 1} },  // 0°
-            new int[][] { {1, 1}, {1, 1} },  // 90°
-            new int[][] { {1, 1}, {1, 1} },  // 180°
-            new int[][] { {1, 1}, {1, 1} }   // 270°
+            new int[][] { {1,1,1,1} },                 // 0°  -> 1x4
+            new int[][] { {1},{1},{1},{1} },           // 90° -> 4x1
+            new int[][] { {1,1,1,1} },                 // 180°
+            new int[][] { {1},{1},{1},{1} }            // 270°
         );
     }
 }
+
 

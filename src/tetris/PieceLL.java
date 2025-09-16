@@ -2,25 +2,25 @@ package tetris;
 public class PieceLL extends Rotarpieza {
     public PieceLL() {
         super(
-            new boolean[][] {
-                {true, false, false},
-                {true, true,  true},
-                {false, false, false}
+            new int[][] {
+                {1, 0, 0},
+                {1, 1,  1},
+                {0, 0, 0}
             }, // 0°
-            new boolean[][] {
-                {false, true,  true},
-                {false, true,  false},
-                {false, true,  false}
+            new int[][] {
+                {0, 1,  1},
+                {0, 1,  0},
+                {0, 1,  0}
             }, // 90°
-            new boolean[][] {
-                {false, false, false},
-                {true,  true,  true},
-                {false, false, true}
+            new int[][] {
+                {0, 0, 0},
+                {1,  1,  1},
+                {0, 0, 1}
             }, // 180°
-            new boolean[][] {
-                {false, true,  false},
-                {false, true,  false},
-                {true,  true,  false}
+            new int[][] {
+                {0, 1,  0},
+                {0, 1,  0},
+                {1,  1,  0}
             }  // 270°
         );
     }

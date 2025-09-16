@@ -2,25 +2,25 @@ package tetris;
 public class PieceDogL extends Rotarpieza {
     public PieceDogL() {
         super(
-            new boolean[][] {
-                {false, true,  true},
-                {true,  true,  false},
-                {false, false, false}
+            new int[][] {
+                {0, 1, 1},
+                {1, 1, 0},
+                {0, 0, 0}
             }, // 0°
-            new boolean[][] {
-                {true,  false},
-                {true,  true },
-                {false, true }
+            new int[][] {
+                {1, 0},
+                {1, 1},
+                {0, 1}
             }, // 90°
-            new boolean[][] {
-                {false, false, false},
-                {false, true,  true},
-                {true,  true,  false}
+            new int[][] {
+                {0, 0, 0},
+                {0, 1, 1},
+                {1, 1, 0}
             }, // 180°
-            new boolean[][] {
-                {true,  false},
-                {true,  true },
-                {false, true }
+            new int[][] {
+                {1, 0},
+                {1, 1},
+                {0, 1}
             }  // 270°
         );
     }
