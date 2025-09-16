@@ -1,19 +1,31 @@
 package tetris;
-public class tablero {
-    private final int[][] matrizTablero;
+public class tablero extends tetris {
+    private final boolean[][] matrizTablero;
 
     public tablero() {
-        matrizTablero = new int[20][10];
+        matrizTablero = new boolean[20][10];
     }  
 
-    public int[][] getMatrizTablero() {
+    public boolean[][] getMatrizTablero() {
         return matrizTablero;
     }
 
-    public void setMatrizTablero(int fila, int columna, int valor) {
+    public void setMatrizTablero(boolean fila, boolean columna, boolean valor) {
         this.matrizTablero[fila][columna] = valor;
     }
 
+    for (int i = 0 ; i < matrizTablero.length; i++) {
+        for (int j = 0; j < matrizTablero[i].length; j++) {
+            if (matrizTablero[i][j] == false) {
+                pieza.setPosicionY(i);
+                pieza.setPosicionX(j);
+        }
+        }
+    }
 
 
 }
+
+
+
+
