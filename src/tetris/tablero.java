@@ -17,8 +17,8 @@ public class tablero extends tetris {
     for (int i = 0 ; i < matrizTablero.length; i++) {
         for (int j = 0; j < matrizTablero[i].length; j++) {
             if (matrizTablero[i][j] == false) {
-                pieza.setPosicionY(i);
-                pieza.setPosicionX(j);
+                piecec.setPosicionY(i);
+                piece.setPosicionX(j);
         }
         }
     }

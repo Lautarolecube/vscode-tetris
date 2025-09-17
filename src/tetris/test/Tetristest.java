@@ -1,13 +1,16 @@
 package tetris.test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Random;
+
 import org.junit.jupiter.api.Test;
-import java.util.Arrays;
 
 import tetris.PieceLL;
 import tetris.PieceLR;
 import tetris.PieceStick;
 import tetris.PieceT;
 import tetris.PieceSquare;
+import tetris.Board;
 import tetris.PieceDogL;
 import tetris.PieceDogR;
 
@@ -188,6 +191,15 @@ public class Tetristest {
         assertMatrixEquals(esperado, pieza.getShape());
     }
 
+    @Test
+    public void testColisionConFondo() {
+        Board board = new Board();
+        ReturnPiece piece = new Random();
+        board.spawnPiece(piece);
+    }
+
+    
+
 
 
     
@@ -196,7 +208,7 @@ public class Tetristest {
 
 
 }
-    // TABLERO
+    
 
 
 

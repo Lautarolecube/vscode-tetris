@@ -1,6 +1,6 @@
 
 package tetris;
-public class PieceDogR extends Rotarpieza {
+public class PieceDogR extends Piece {
     public PieceDogR() {
         super(
             new int[][] {
