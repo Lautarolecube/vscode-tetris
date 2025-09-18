@@ -1,13 +1,13 @@
 package tetris.test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import java.util.Arrays;
 
 import tetris.PieceLL;
 import tetris.PieceLR;
 import tetris.PieceStick;
 import tetris.PieceT;
 import tetris.PieceSquare;
+import tetris.Board;
 import tetris.PieceDogL;
 import tetris.PieceDogR;
 
@@ -187,11 +187,38 @@ public class Tetristest {
         };
         assertMatrixEquals(esperado, pieza.getShape());
     }
+    // llegar al fondo del tablero
+    @Test
+    void piezaLlegaAlFondo() {
+        Board board = new Board();
+        board.spawnPiece(new PieceSquare());
+        // Bajamos la pieza hasta que no pueda bajar más 
+        boolean piezaFijada = false;
+        for (int i = 0; i < 40; i++) {     // límite grande por seguridad
+            if (board.tick()) {             // intenta bajar 1 celda si no puede, la fija
+                piezaFijada = true;              // se pone true si se fijó
+                break;
+            }
+        
+        }
+    }
+    
+    // llegar al fondo con otra pieza
+    @Test
+    void piezaLLegarALfondo2(){
+        Board board = new Board();
+        board.spawnPiece(new PieceLL());
+        boolean piezaFijada = false;
+        for (int i = 0 ; i < 40; i++){
+            if (board.tick()){
+                piezaFijada = true;
+                break;
+            }
+        }
+    }
 
-
-}
-    // TABLERO
-
+// TABLERO
+} 
 
 
 
