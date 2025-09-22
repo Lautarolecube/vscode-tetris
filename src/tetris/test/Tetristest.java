@@ -1,5 +1,8 @@
 package tetris.test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Random;
+
 import org.junit.jupiter.api.Test;
 
 import tetris.PieceLL;
@@ -255,7 +258,16 @@ public class Tetristest {
         assertTrue(filaEliminada); //verifico que se elimino una fila
     }
 
-} 
+
+    @Test
+    public void testColisionConFondo() {
+        Board board = new Board();
+        ReturnPiece piece = new Random();
+        board.spawnPiece(piece);
+    }
+}
+    
+
 
 
 

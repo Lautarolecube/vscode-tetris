@@ -1,5 +1,5 @@
 package tetris;
-public class PieceT extends Rotarpieza {
+public class PieceT extends Piece {
     public PieceT() {
         super(
             new int[][] {

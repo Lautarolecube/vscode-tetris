@@ -1,10 +1,11 @@
 package tetris;
-public abstract class Rotarpieza {
+
+public abstract class Piece{
 
     private final int[][][] rotations; // [4][filas][cols]
     private int orientation = 0;       // 0..3
 
-    public Rotarpieza(int[][] r0, int[][] r90, int[][] r180, int[][] r270) {
+    public Piece(int[][] r0, int[][] r90, int[][] r180, int[][] r270) {
         this.rotations = new int[][][] {
             copy(r0), copy(r90), copy(r180), copy(r270)
         };
