@@ -187,6 +187,7 @@ public class Tetristest {
         };
         assertMatrixEquals(esperado, pieza.getShape());
     }
+
     // llegar al fondo del tablero
     @Test
     void piezaLlegaAlFondo() {
@@ -218,6 +219,42 @@ public class Tetristest {
     }
 
 // TABLERO
+    @Test 
+    void colisionDePieza(){
+        Board board = new Board(); 
+        board.spawnPiece(new PieceSquare());
+        for (int i = 0; i < 38; i++){ // baja la pieza hasta el fondo
+            board.tick(); //llamo a los ticks para que baje
+        }
+
+        board.spawnPiece(new PieceLL());
+        boolean colision = false; //uso para ver si hubo colision
+        for (int j = 0; j < 38; j++){  //baja la pieza hasta que choque con el cuadrado
+            if (board.tick()){ //si no puede bajar mas hubo colision
+                colision = true;
+                break;
+            }
+        }
+        assertTrue(colision); //verifico que hubo colision
+    }
+
+    // llenar una fila completa y eliminarla
+
+    @Test
+    void filaCompleta(){
+        Board board = new Board();
+        //llenar la fila 19
+        for (int c = 0; c < 10; c+=2){ //cada dos porque la pieza es de 2 celdas de ancho
+            board.spawnPiece(new PieceSquare());
+            for (int r = 0; r < 20; r++){ //baja la pieza hasta el fondo
+                board.tick();
+            }
+        }
+
+        boolean filaEliminada = board.clearFullRows(); //elimino las filas completas
+        assertTrue(filaEliminada); //verifico que se elimino una fila
+    }
+
 } 
 
 

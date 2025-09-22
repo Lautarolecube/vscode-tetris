@@ -15,7 +15,7 @@ public final class clock implements Itick {
         this.threshold = threshold;
     }
  
-    // baja cada 2 ticks
+    // baja cada 2 ticks (Contrusctor alternativo)
     public clock(Runnable onTick) {
         this(onTick, 2);
     }

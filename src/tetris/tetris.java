@@ -46,8 +46,5 @@ public class Tetris {
         Rotarpieza p = randomPiece();
         board.spawnPiece(p); 
     }
-
-
-
 }
 

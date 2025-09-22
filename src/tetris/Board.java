@@ -77,8 +77,35 @@ public class Board {
                 }
             }
         }
-       // aqui agregar la Logica para eliminar filas
     }
+
+    //Eliminar la fila completa
+
+    public boolean clearFullRows() {
+        boolean filaEliminada = false;
+        for (int r = 0; r < rows; r++) {//En esta linea va a recorerr todas las filas
+            boolean full = true; //Se asume que la fila está completa en el caso que full no sea false
+            for (int c = 0; c < cols; c++) {
+                if (grid[r][c] == 0) {
+                    full = false; // Si alguna de las celdas no tiene un valor "1" retorna falsa, por lo tanto no va a ser necesario eliminar la fila
+                    break;
+                }
+            }
+            if (full) { //Si es verdadero, ingresa y la siguiente acción es
+                // Mover todas las filas superiores hacia abajo
+                filaEliminada = true;
+                for (int rr = r; rr > 0; rr--) {
+                    System.arraycopy(grid[rr - 1], 0, grid[rr], 0, cols); // Desplaza la fila hacia abajo, es decir copia la fila que está encima de la completa en dónde está la fila completa y limpia la fila 0
+                }
+                // Limpia la fila superior
+                for (int c = 0; c < cols; c++) {
+                    grid[0][c] = 0; // Va colocando 0 en cada celda de la fila 1
+                }
+            }
+        }
+        return filaEliminada;
+    }
+
 
     // ====== Getters útiles para tests ======
 
@@ -88,4 +115,5 @@ public class Board {
     public boolean isCellOccupied(int r, int c) { return grid[r][c] != 0; }
     public int getRows() { return rows; }
     public int getCols() { return cols; }
+
 }
